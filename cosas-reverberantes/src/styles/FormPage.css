@@ -1,0 +1,146 @@
+.form-page {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	min-height: 100vh;
+}
+
+.form-page .back-btn {
+	background-color: transparent;
+	border: 2px solid #667eea;
+	color: #667eea;
+	padding: 10px 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	margin-bottom: 40px;
+	display: block;
+}
+
+.form-page .back-btn:hover {
+	background-color: #667eea;
+	color: #000;
+}
+
+.form-page h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.form-page .subtitle {
+	font-size: 1.1rem;
+	color: #999;
+	margin-bottom: 40px;
+}
+
+.suggestion-form {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	background-color: #1a1a1a;
+	border: 1px solid #333;
+	padding: 30px;
+	border-radius: 8px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-group label {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #ddd;
+	text-transform: capitalize;
+}
+
+.form-group input,
+.form-group textarea {
+	background-color: #0a0a0a;
+	border: 2px solid #333;
+	color: #fff;
+	padding: 12px 15px;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-family: inherit;
+	transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+	color: #666;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: none;
+	border-color: #667eea;
+	background-color: #1a1a1a;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+	border-color: #ff6b6b;
+}
+
+.error-message {
+	color: #ff6b6b;
+	font-size: 0.85rem;
+	margin-top: 5px;
+}
+
+.form-actions {
+	display: flex;
+	gap: 15px;
+	margin-top: 20px;
+}
+
+.submit-btn {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border: none;
+	color: white;
+	padding: 15px 40px;
+	border-radius: 4px;
+	font-size: 1.05rem;
+	cursor: pointer;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease;
+	flex: 1;
+}
+
+.submit-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:active {
+	transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+	.form-page {
+		padding: 20px;
+	}
+
+	.form-page h1 {
+		font-size: 1.8rem;
+	}
+
+	.suggestion-form {
+		padding: 20px;
+	}
+
+	.submit-btn {
+		padding: 12px 25px;
+	}
+}
