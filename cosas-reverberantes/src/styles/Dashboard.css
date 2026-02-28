@@ -94,7 +94,9 @@ td {
 }
 
 @media (max-width: 768px) {
-
+    h1 {
+        font-size: 4rem;
+    }
 	.table-section {
 		padding: 20px;
 	}
