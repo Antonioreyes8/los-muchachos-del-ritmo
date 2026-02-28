@@ -1,7 +1,7 @@
 import "../styles/Dashboard.css";
 
 const CATEGORY_FIELDS = {
-	Movie: [
+	Movies: [
 		"Who suggested it?",
 		"Title",
 		"Where is it from?",
@@ -15,7 +15,7 @@ const CATEGORY_FIELDS = {
 		"What era is it from?",
 		"Why do you recommend it?",
 	],
-	Article: [
+	Articles: [
 		"Who suggested it?",
 		"Title",
 		"Where is it from?",
@@ -23,7 +23,7 @@ const CATEGORY_FIELDS = {
 		"Link",
 		"Why do you recommend it?",
 	],
-	Book: [
+	Books: [
 		"Who suggested it?",
 		"Author",
 		"Title",
@@ -31,21 +31,21 @@ const CATEGORY_FIELDS = {
 		"What era is it from?",
 		"Why do you recommend it?",
 	],
-	Podcast: [
+	Podcasts: [
 		"Who suggested it?",
 		"Title",
 		"Where is it from?",
 		"What era is it from?",
 		"Link",
 	],
-	Song: [
+	Songs: [
 		"Who suggested it?",
 		"Title",
 		"Where is it from?",
 		"What era is it from?",
 		"Why do you recommend it?",
 	],
-	Artist: [
+	Artists: [
 		"Who suggested it?",
 		"Name",
 		"Where is it from?",
@@ -72,7 +72,7 @@ function Dashboard({ suggestions }) {
 	return (
 		<div className="dashboard">
 			<h1>Community Dashboard</h1>
-			<p className="subtitle">All Suggestions from the Crew</p>
+			<p className="subtitle">Sugerencias de los muchachos del ritmo</p>
 
 			<div className="tables-container">
 				{Object.entries(CATEGORY_FIELDS).map(([category, fields]) => (

@@ -5,7 +5,7 @@ import CategorySelection from "./pages/CategorySelection";
 import NameSelection from "./pages/NameSelection";
 import FormPage from "./pages/FormPage";
 
-const BROTHERS = ["Antonio", "Juan", "Carlos", "Diego"];
+const FAMILY_MEMBERS = ["Tony", "Wonk", "Uri", "Tesco", "Matt"];
 
 const CATEGORIES = [
 	"Movie",
@@ -72,7 +72,7 @@ function App() {
 			{currentPage === "nameSelection" && (
 				<NameSelection
 					category={selectedCategory}
-					brothers={BROTHERS}
+					family_member={FAMILY_MEMBERS}
 					onSelectName={handleNameSelect}
 					onBack={handleBackToDashboard}
 				/>

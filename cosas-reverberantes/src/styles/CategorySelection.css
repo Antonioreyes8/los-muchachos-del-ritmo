@@ -10,8 +10,8 @@
 .back-btn {
 	align-self: flex-start;
 	background-color: transparent;
-	border: 2px solid #667eea;
-	color: #667eea;
+	border: 2px solid #B32C2C;
+	color: #B32C2C;
 	padding: 10px 20px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -21,14 +21,14 @@
 }
 
 .back-btn:hover {
-	background-color: #667eea;
+	background-color: #B32C2C;
 	color: #000;
 }
 
 .category-selection h1 {
 	font-size: 2.5rem;
 	margin-bottom: 10px;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: #B32C2C;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -62,9 +62,9 @@
 }
 
 .category-btn:hover {
-	border-color: #667eea;
+	border-color: #B32C2C;
 	background-color: #0a0a0a;
-	color: #667eea;
+	color: #B32C2C;
 	transform: translateY(-5px);
 	box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
 }

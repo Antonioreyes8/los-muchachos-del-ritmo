@@ -1,21 +1,21 @@
 import "../styles/NameSelection.css";
 
-function NameSelection({ category, brothers, onSelectName, onBack }) {
+function NameSelection({ category, family_member, onSelectName, onBack }) {
 	return (
 		<div className="name-selection">
 			<button className="back-btn" onClick={onBack}>
 				← Back
 			</button>
-			<h1>Who is this suggestion from?</h1>
-			<p className="subtitle">Choose your name for {category}</p>
+			<h1>Quien eres?</h1>
+			<p className="subtitle">Who are you?</p>
 			<div className="names-grid">
-				{brothers.map((brother) => (
+				{family_member.map((family_member) => (
 					<button
-						key={brother}
+						key={family_member}
 						className="name-btn"
-						onClick={() => onSelectName(brother)}
+						onClick={() => onSelectName(family_member)}
 					>
-						{brother}
+						{family_member}
 					</button>
 				))}
 			</div>

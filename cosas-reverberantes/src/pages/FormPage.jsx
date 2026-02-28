@@ -10,7 +10,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{
 			label: "Why do you recommend it?",
 			key: "recommendation",
@@ -26,7 +26,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{
 			label: "Why do you recommend it?",
 			key: "recommendation",
@@ -42,7 +42,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{ label: "Link", key: "link", type: "url", required: true },
 		{
 			label: "Why do you recommend it?",
@@ -60,7 +60,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{
 			label: "Why do you recommend it?",
 			key: "recommendation",
@@ -76,7 +76,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{ label: "Link", key: "link", type: "url", required: true },
 	],
 	Song: [
@@ -87,7 +87,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{
 			label: "Why do you recommend it?",
 			key: "recommendation",
@@ -103,7 +103,7 @@ const FORM_FIELDS = {
 			type: "text",
 			required: true,
 		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "text", required: true },
 		{
 			label: "Why do you recommend it?",
 			key: "recommendation",
@@ -116,13 +116,6 @@ const FORM_FIELDS = {
 		{
 			label: "Where is it from?",
 			key: "whereFrom",
-			type: "text",
-			required: true,
-		},
-		{ label: "What era is it from?", key: "era", type: "text", required: true },
-		{
-			label: "When was it created?",
-			key: "createdWhen",
 			type: "text",
 			required: true,
 		},
