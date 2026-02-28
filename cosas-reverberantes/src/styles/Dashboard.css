@@ -94,8 +94,9 @@ td {
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 4rem;
+    .dashboard h1 {
+        font-size: 8rem;
+        letter-spacing: .15rem;
     }
 	.table-section {
 		padding: 20px;
