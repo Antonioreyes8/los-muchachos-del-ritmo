@@ -165,7 +165,7 @@ function FormPage({ category, name, onSubmit, onBack }) {
 				← Back
 			</button>
 			<h1>Add {category}</h1>
-			<p className="subtitle">Suggested by: {name}</p>
+            <h2>Suggested by: {name}</h2>
 
 			<form onSubmit={handleSubmit} className="suggestion-form">
 				{fields.map((field) => (

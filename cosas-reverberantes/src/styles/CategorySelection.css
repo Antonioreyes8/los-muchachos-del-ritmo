@@ -26,7 +26,8 @@
 }
 
 .category-selection h1 {
-	font-size: 2.5rem;
+	font-size: 5rem;
+    letter-spacing: .10rem;
 	margin-bottom: 10px;
 	background: #B32C2C;
 	-webkit-background-clip: text;
@@ -34,10 +35,11 @@
 	background-clip: text;
 }
 
-.category-selection .subtitle {
-	font-size: 1.1rem;
-	color: #999;
-	margin-bottom: 50px;
+.category-selection h2 {
+    font-size: 2rem;
+    letter-spacing: .05rem;
+    color: #999;
+    margin-bottom: 30px;
 }
 
 .categories-grid {
@@ -75,8 +77,8 @@
 
 @media (max-width: 768px) {
 	.category-selection h1 {
-		font-size: 5rem;
-        letter-spacing: .10rem;
+		font-size: 3rem;
+        letter-spacing: .075rem;
 	}
 
 	.categories-grid {

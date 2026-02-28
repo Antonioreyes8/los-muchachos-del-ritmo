@@ -5,19 +5,13 @@
 }
 
 .dashboard h1 {
-	font-size: 10rem;
-    letter-spacing: .25rem;
+	font-size: 20rem;
+    letter-spacing: .5rem;
 	margin-bottom: 10px;
 	background: #b32c2c;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-}
-
-.dashboard .subtitle {
-	font-size: 1.2rem;
-	color: #999;
-	margin-bottom: 40px;
 }
 
 .tables-container {

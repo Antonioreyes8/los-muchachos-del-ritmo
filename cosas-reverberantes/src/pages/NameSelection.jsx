@@ -7,7 +7,7 @@ function NameSelection({ category, family_member, onSelectName, onBack }) {
 				← Back
 			</button>
 			<h1>Quien eres?</h1>
-			<p className="subtitle">Who are you?</p>
+			<h2>Who are you?</h2>
 			<div className="names-grid">
 				{family_member.map((family_member) => (
 					<button

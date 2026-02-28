@@ -7,7 +7,7 @@ function CategorySelection({ categories, onSelectCategory, onBack }) {
 				← Back
 			</button>
 			<h1>What are you suggesting?</h1>
-			<p className="subtitle">Escoge una categoria</p>
+			<h2>Que estas sugeriendo?</h2>
 			<div className="categories-grid">
 				{categories.map((category) => (
 					<button
