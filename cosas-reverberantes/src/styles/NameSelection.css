@@ -75,7 +75,8 @@
 
 @media (max-width: 768px) {
 	.name-selection h1 {
-		font-size: 1.8rem;
+		font-size: 5rem;
+        letter-spacing: .10rem;
 	}
 
 	.names-grid {

@@ -133,7 +133,8 @@
 	}
 
 	.form-page h1 {
-		font-size: 1.8rem;
+		font-size: 5rem;
+        letter-spacing: .10rem;
 	}
 
 	.suggestion-form {
