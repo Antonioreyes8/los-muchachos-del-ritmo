@@ -122,7 +122,6 @@
 
 .submit-btn:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .submit-btn:active {

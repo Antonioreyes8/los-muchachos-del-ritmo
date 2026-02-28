@@ -15,7 +15,6 @@ const CATEGORIES = [
 	"Podcast",
 	"Song",
 	"Artist",
-	"Public entities",
 ];
 
 function App() {

@@ -52,12 +52,6 @@ const CATEGORY_FIELDS = {
 		"What era is it from?",
 		"Why do you recommend it?",
 	],
-	"Public entities": [
-		"Who suggested it?",
-		"What era is it from?",
-		"When was it created?",
-		"Why do you recommend it?",
-	],
 };
 
 function Dashboard({ suggestions }) {
@@ -103,9 +97,6 @@ function Dashboard({ suggestions }) {
 												<td>{suggestion.era || "-"}</td>
 												{category === "Article" || category === "Podcast" ? (
 													<td>{suggestion.link || "-"}</td>
-												) : null}
-												{category === "Public entities" ? (
-													<td>{suggestion.createdWhen || "-"}</td>
 												) : null}
 												<td className="recommendation-cell">
 													{suggestion.recommendation || "-"}
