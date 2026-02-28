@@ -71,8 +71,8 @@ function Dashboard({ suggestions }) {
 
 	return (
 		<div className="dashboard">
-			<h1>Community Dashboard</h1>
-			<p className="subtitle">Sugerencias de los muchachos del ritmo</p>
+			<h1>Los Muchachos del Ritmo</h1>
+			<p className="subtitle">Community Dashboard</p>
 
 			<div className="tables-container">
 				{Object.entries(CATEGORY_FIELDS).map(([category, fields]) => (

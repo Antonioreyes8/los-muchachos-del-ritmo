@@ -22,6 +22,19 @@ body,
 	box-sizing: border-box;
 }
 
+/* Use Druk fonts for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family:
+		"Druk Condensed", "Druk Condensed", "Druk Condensed", sans-serif;
+	font-weight: 900;
+	letter-spacing: -0.02em;
+}
+
 a {
 	color: #667eea;
 	text-decoration: none;

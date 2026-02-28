@@ -5,9 +5,10 @@
 }
 
 .dashboard h1 {
-	font-size: 3rem;
+	font-size: 10rem;
+    letter-spacing: .25rem;
 	margin-bottom: 10px;
-    background: #B32C2C;
+	background: #b32c2c;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -39,7 +40,7 @@
 
 .table-section h2 {
 	font-size: 1.8rem;
-	color: #B32C2C;
+	color: #b32c2c;
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -70,7 +71,7 @@ td {
 
 th {
 	background-color: #1a1a1a;
-	color: #B32C2C;
+	color: #b32c2c;
 	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 0.85rem;
@@ -93,9 +94,6 @@ td {
 }
 
 @media (max-width: 768px) {
-	.dashboard h1 {
-		font-size: 2rem;
-	}
 
 	.table-section {
 		padding: 20px;

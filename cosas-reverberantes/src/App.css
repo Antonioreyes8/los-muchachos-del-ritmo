@@ -1,3 +1,52 @@
+/* Font Face Declarations for Druk Fonts */
+@font-face {
+	font-family: "Druk Condensed";
+	src: url("/fonts/Druk Condensed Family/DrukCond-Super-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Condensed";
+	src: url("/fonts/Druk Condensed Family/DrukCond-SuperItalic-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Druk Condensed X";
+	src: url("/fonts/Druk Condensed Family/DrukXCond-Super-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Condensed X";
+	src: url("/fonts/Druk Condensed Family/DrukXCond-SuperItalic-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Druk Condensed XX";
+	src: url("/fonts/Druk Condensed Family/DrukXXCond-Super-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Druk Condensed XX";
+	src: url("/fonts/Druk Condensed Family/DrukXXCond-SuperItalic-Trial.otf")
+		format("opentype");
+	font-weight: 900;
+	font-style: italic;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,9 +56,6 @@
 body {
 	background-color: #000;
 	color: #fff;
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-		Arial, sans-serif;
 }
 
 .App {
@@ -26,12 +72,11 @@ body {
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-	background: #B32C2C;
+	background: #b32c2c;
 	color: white;
 	border: none;
 	font-size: 48px;
 	cursor: pointer;
-	box-shadow: 0 4px 20px #B32C2C;
 	transition: all 0.3s ease;
 	display: flex;
 	align-items: center;
@@ -41,7 +86,6 @@ body {
 
 .floating-plus-btn:hover {
 	transform: scale(1.1);
-	box-shadow: 0 6px 30px #B32C2C;
 }
 
 .floating-plus-btn:active {
