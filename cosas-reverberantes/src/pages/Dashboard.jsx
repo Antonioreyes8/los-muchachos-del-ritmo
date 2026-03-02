@@ -26,14 +26,14 @@ const CATEGORY_FIELDS = {
 };
 
 const FIELD_LABELS = {
-	suggested_by: "Who suggested it?",
+	suggested_by: "Suggested By",
 	title: "Title",
 	author: "Author",
 	artist_name: "Name",
-	where_from: "Where is it from?",
-	year: "What year is it from?",
+	where_from: "Where",
+	year: "Year",
 	link: "Link",
-	recommendation: "Why do you recommend it?",
+	recommendation: "Reccommended because",
 };
 
 function Dashboard({ suggestions = [], onDelete }) {
