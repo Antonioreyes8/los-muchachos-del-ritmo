@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
 import CategorySelection from "./pages/CategorySelection";
 import NameSelection from "./pages/NameSelection";
 import FormPage from "./pages/FormPage";
 
+import { getSuggestions, createSuggestion } from "./services/suggestions";
+
 const FAMILY_MEMBERS = ["Tony", "Wonk", "Uri", "Tesco", "Matt"];
 
 const CATEGORIES = [
-	"Movie",
+	"Movies",
 	"Series",
-	"Article",
-	"Book",
-	"Podcast",
-	"Song",
-	"Artist",
+	"Articles",
+	"Books",
+	"Podcasts",
+	"Songs",
+	"Artists",
 ];
 
 function App() {
@@ -22,11 +24,29 @@ function App() {
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [selectedName, setSelectedName] = useState(null);
 	const [suggestions, setSuggestions] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	/* ---------------- LOAD FROM SUPABASE ---------------- */
+
+	useEffect(() => {
+		loadSuggestions();
+	}, []);
+
+	async function loadSuggestions() {
+		try {
+			const data = await getSuggestions();
+			setSuggestions(data);
+		} catch (error) {
+			console.error("Error loading suggestions:", error);
+		} finally {
+			setLoading(false);
+		}
+	}
+
+	/* ---------------- NAVIGATION ---------------- */
 
 	const handleAddSuggestion = () => {
 		setCurrentPage("categorySelection");
-		setSelectedCategory(null);
-		setSelectedName(null);
 	};
 
 	const handleCategorySelect = (category) => {
@@ -39,28 +59,35 @@ function App() {
 		setCurrentPage("formPage");
 	};
 
-	const handleFormSubmit = (formData) => {
-		const newSuggestion = {
-			id: Date.now(),
-			category: selectedCategory,
-			name: selectedName,
-			...formData,
-		};
-		setSuggestions([...suggestions, newSuggestion]);
-		setCurrentPage("dashboard");
-		setSelectedCategory(null);
-		setSelectedName(null);
-	};
-
 	const handleBackToDashboard = () => {
 		setCurrentPage("dashboard");
 		setSelectedCategory(null);
 		setSelectedName(null);
 	};
 
+	/* ---------------- FORM SUBMIT ---------------- */
+
+	const handleFormSubmit = async (formData) => {
+		try {
+			await createSuggestion(formData);
+			await loadSuggestions(); // refresh from DB
+			handleBackToDashboard();
+		} catch (error) {
+			console.error("Error saving suggestion:", error);
+		}
+	};
+
+	/* ---------------- RENDER ---------------- */
+
 	return (
 		<div className="App">
-			{currentPage === "dashboard" && <Dashboard suggestions={suggestions} />}
+			{currentPage === "dashboard" &&
+				(loading ? (
+					<p>Loading suggestions...</p>
+				) : (
+					<Dashboard suggestions={suggestions} onDelete={loadSuggestions} />
+				))}
+
 			{currentPage === "categorySelection" && (
 				<CategorySelection
 					categories={CATEGORIES}
@@ -68,6 +95,7 @@ function App() {
 					onBack={handleBackToDashboard}
 				/>
 			)}
+
 			{currentPage === "nameSelection" && (
 				<NameSelection
 					category={selectedCategory}
@@ -76,6 +104,7 @@ function App() {
 					onBack={handleBackToDashboard}
 				/>
 			)}
+
 			{currentPage === "formPage" && (
 				<FormPage
 					category={selectedCategory}
@@ -85,7 +114,6 @@ function App() {
 				/>
 			)}
 
-			{/* Floating Plus Button */}
 			<button
 				className="floating-plus-btn"
 				onClick={handleAddSuggestion}

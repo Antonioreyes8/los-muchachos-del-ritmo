@@ -1,67 +1,66 @@
 import "../styles/Dashboard.css";
+import { deleteSuggestion } from "../services/suggestions";
 
 const CATEGORY_FIELDS = {
-	Movies: [
-		"Who suggested it?",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Why do you recommend it?",
-	],
-	Series: [
-		"Who suggested it?",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Why do you recommend it?",
-	],
+	Movies: ["suggested_by", "title", "where_from", "year", "recommendation"],
+	Series: ["suggested_by", "title", "where_from", "year", "recommendation"],
 	Articles: [
-		"Who suggested it?",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Link",
-		"Why do you recommend it?",
+		"suggested_by",
+		"title",
+		"where_from",
+		"year",
+		"link",
+		"recommendation",
 	],
 	Books: [
-		"Who suggested it?",
-		"Author",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Why do you recommend it?",
+		"suggested_by",
+		"author",
+		"title",
+		"where_from",
+		"year",
+		"recommendation",
 	],
-	Podcasts: [
-		"Who suggested it?",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Link",
-	],
-	Songs: [
-		"Who suggested it?",
-		"Title",
-		"Where is it from?",
-		"What era is it from?",
-		"Why do you recommend it?",
-	],
-	Artists: [
-		"Who suggested it?",
-		"Name",
-		"Where is it from?",
-		"What era is it from?",
-		"Why do you recommend it?",
-	],
+	Podcasts: ["suggested_by", "title", "where_from", "year", "link"],
+	Songs: ["suggested_by", "title", "where_from", "year", "recommendation"],
+	Artists: ["suggested_by", "artist_name", "where_from", "year", "recommendation"],
 };
 
-function Dashboard({ suggestions }) {
-	const groupedSuggestions = {};
+const FIELD_LABELS = {
+	suggested_by: "Who suggested it?",
+	title: "Title",
+	author: "Author",
+	artist_name: "Name",
+	where_from: "Where is it from?",
+	year: "What year is it from?",
+	link: "Link",
+	recommendation: "Why do you recommend it?",
+};
 
-	Object.keys(CATEGORY_FIELDS).forEach((category) => {
-		groupedSuggestions[category] = suggestions.filter(
-			(s) => s.category === category,
+function Dashboard({ suggestions = [], onDelete }) {
+	const groupedSuggestions = Object.keys(CATEGORY_FIELDS).reduce(
+		(acc, category) => {
+			acc[category] = suggestions.filter(
+				(s) => s.category === category
+			);
+			return acc;
+		},
+		{}
+	);
+
+	const handleDelete = async (id) => {
+		const confirmDelete = window.confirm(
+			"Are you sure you want to delete this suggestion?"
 		);
-	});
+
+		if (!confirmDelete) return;
+
+		try {
+			await deleteSuggestion(id);
+			if (onDelete) onDelete(); // refresh suggestions
+		} catch (error) {
+			console.error("Error deleting suggestion:", error);
+		}
+	};
 
 	return (
 		<div className="dashboard">
@@ -71,36 +70,54 @@ function Dashboard({ suggestions }) {
 				{Object.entries(CATEGORY_FIELDS).map(([category, fields]) => (
 					<div key={category} className="table-section">
 						<h2>{category}</h2>
+
 						{groupedSuggestions[category].length === 0 ? (
-							<p className="empty-message">No suggestions yet for {category}</p>
+							<p className="empty-message">
+								No suggestions yet for {category}
+							</p>
 						) : (
 							<div className="table-wrapper">
 								<table>
 									<thead>
 										<tr>
+											<th></th> {/* Delete column */}
 											{fields.map((field) => (
-												<th key={field}>{field}</th>
+												<th key={field}>
+													{FIELD_LABELS[field]}
+												</th>
 											))}
 										</tr>
 									</thead>
+
 									<tbody>
 										{groupedSuggestions[category].map((suggestion) => (
 											<tr key={suggestion.id}>
-												<td>{suggestion.name || "-"}</td>
 												<td>
-													{suggestion.title ||
-														suggestion.author ||
-														suggestion.artistName ||
-														"-"}
+													<button
+														className="delete-btn"
+														onClick={() =>
+															handleDelete(suggestion.id)
+														}
+													>
+														−
+													</button>
 												</td>
-												<td>{suggestion.whereFrom || "-"}</td>
-												<td>{suggestion.era || "-"}</td>
-												{category === "Article" || category === "Podcast" ? (
-													<td>{suggestion.link || "-"}</td>
-												) : null}
-												<td className="recommendation-cell">
-													{suggestion.recommendation || "-"}
-												</td>
+
+												{fields.map((field) => (
+													<td key={field}>
+														{field === "link" && suggestion[field] ? (
+															<a
+																href={suggestion[field]}
+																target="_blank"
+																rel="noreferrer"
+															>
+																View
+															</a>
+														) : (
+															suggestion[field] || "-"
+														)}
+													</td>
+												))}
 											</tr>
 										))}
 									</tbody>
