@@ -33,6 +33,7 @@ const FORM_FIELDS = {
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: true },
+		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 	Songs: [
 		{ label: "Title", key: "title", type: "text", required: true },
