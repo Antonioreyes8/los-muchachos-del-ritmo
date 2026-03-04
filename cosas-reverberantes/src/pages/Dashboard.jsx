@@ -2,8 +2,8 @@ import "../styles/Dashboard.css";
 import { deleteSuggestion } from "../services/suggestions";
 
 const CATEGORY_FIELDS = {
-	Movies: ["suggested_by", "title", "where_from", "year", "recommendation"],
-	Series: ["suggested_by", "title", "where_from", "year", "recommendation"],
+	Movies: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
+	Series: ["suggested_by", "title", "where_from", "year", "link","recommendation"],
 	Articles: [
 		"suggested_by",
 		"title",
@@ -18,15 +18,17 @@ const CATEGORY_FIELDS = {
 		"title",
 		"where_from",
 		"year",
+		"link",
 		"recommendation",
 	],
 	Podcasts: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
-	Songs: ["suggested_by", "title", "where_from", "year", "recommendation"],
+	Songs: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
 	Artists: [
 		"suggested_by",
 		"artist_name",
 		"where_from",
 		"year",
+		"link",
 		"recommendation",
 	],
 };

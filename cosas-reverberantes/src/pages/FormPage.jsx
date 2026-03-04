@@ -6,12 +6,14 @@ const FORM_FIELDS = {
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
+		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 	Series: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
+		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 	Articles: [
@@ -26,6 +28,7 @@ const FORM_FIELDS = {
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
+		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 	Podcasts: [
@@ -39,11 +42,13 @@ const FORM_FIELDS = {
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
+		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 	Artists: [
 		{ label: "Name", key: "artist_name", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "number", required: true },
+		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "recommendation", type: "textarea", required: true },
 	],
 };
