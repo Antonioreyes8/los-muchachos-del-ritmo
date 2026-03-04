@@ -22,7 +22,13 @@ const CATEGORY_FIELDS = {
 	],
 	Podcasts: ["suggested_by", "title", "where_from", "year", "link"],
 	Songs: ["suggested_by", "title", "where_from", "year", "recommendation"],
-	Artists: ["suggested_by", "artist_name", "where_from", "year", "recommendation"],
+	Artists: [
+		"suggested_by",
+		"artist_name",
+		"where_from",
+		"year",
+		"recommendation",
+	],
 };
 
 const FIELD_LABELS = {
@@ -33,23 +39,21 @@ const FIELD_LABELS = {
 	where_from: "Where",
 	year: "Year",
 	link: "Link",
-	recommendation: "Reccommended because",
+	recommendation: "Description",
 };
 
 function Dashboard({ suggestions = [], onDelete }) {
 	const groupedSuggestions = Object.keys(CATEGORY_FIELDS).reduce(
 		(acc, category) => {
-			acc[category] = suggestions.filter(
-				(s) => s.category === category
-			);
+			acc[category] = suggestions.filter((s) => s.category === category);
 			return acc;
 		},
-		{}
+		{},
 	);
 
 	const handleDelete = async (id) => {
 		const confirmDelete = window.confirm(
-			"Are you sure you want to delete this suggestion?"
+			"Are you sure you want to delete this suggestion?",
 		);
 
 		if (!confirmDelete) return;
@@ -72,9 +76,7 @@ function Dashboard({ suggestions = [], onDelete }) {
 						<h2>{category}</h2>
 
 						{groupedSuggestions[category].length === 0 ? (
-							<p className="empty-message">
-								No suggestions yet for {category}
-							</p>
+							<p className="empty-message">No suggestions yet for {category}</p>
 						) : (
 							<div className="table-wrapper">
 								<table>
@@ -82,9 +84,7 @@ function Dashboard({ suggestions = [], onDelete }) {
 										<tr>
 											<th></th> {/* Delete column */}
 											{fields.map((field) => (
-												<th key={field}>
-													{FIELD_LABELS[field]}
-												</th>
+												<th key={field}>{FIELD_LABELS[field]}</th>
 											))}
 										</tr>
 									</thead>
@@ -95,16 +95,21 @@ function Dashboard({ suggestions = [], onDelete }) {
 												<td>
 													<button
 														className="delete-btn"
-														onClick={() =>
-															handleDelete(suggestion.id)
-														}
+														onClick={() => handleDelete(suggestion.id)}
 													>
 														−
 													</button>
 												</td>
 
 												{fields.map((field) => (
-													<td key={field}>
+													<td
+														key={field}
+														className={
+															field === "recommendation"
+																? "recommendation-cell"
+																: ""
+														}
+													>
 														{field === "link" && suggestion[field] ? (
 															<a
 																href={suggestion[field]}
