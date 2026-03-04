@@ -20,7 +20,7 @@ const CATEGORY_FIELDS = {
 		"year",
 		"recommendation",
 	],
-	Podcasts: ["suggested_by", "title", "where_from", "year", "link"],
+	Podcasts: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
 	Songs: ["suggested_by", "title", "where_from", "year", "recommendation"],
 	Artists: [
 		"suggested_by",
