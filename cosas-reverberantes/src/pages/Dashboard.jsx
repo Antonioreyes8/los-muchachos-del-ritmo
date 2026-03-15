@@ -107,8 +107,8 @@ function Dashboard({ suggestions = [], onDelete }) {
 													<td
 														key={field}
 														className={
-															field === "description"
-																? "description-cell"
+															field === "description" || field === "author" || field === "artist_name" || field === "title"
+																? "title-or-description-cell"
 																: ""
 														}
 													>
