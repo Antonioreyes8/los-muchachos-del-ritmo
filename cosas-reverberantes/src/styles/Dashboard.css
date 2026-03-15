@@ -76,7 +76,7 @@ td {
 	word-wrap: break-word;
 }
 
-.recommendation-cell {
+.description-cell {
 	max-width: 400px;
 	white-space: pre-line;
 }
@@ -114,7 +114,7 @@ td {
 		font-size: 1.3rem;
 	}
 
-	.recommendation-cell {
+	.description-cell {
         min-width: 250px;
         max-width: none;
     }

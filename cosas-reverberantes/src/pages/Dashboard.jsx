@@ -2,15 +2,15 @@ import "../styles/Dashboard.css";
 import { deleteSuggestion } from "../services/suggestions";
 
 const CATEGORY_FIELDS = {
-	Movies: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
-	Series: ["suggested_by", "title", "where_from", "year", "link","recommendation"],
+	Movies: ["suggested_by", "title", "where_from", "year", "link", "description"],
+	Series: ["suggested_by", "title", "where_from", "year", "link","description"],
 	Articles: [
 		"suggested_by",
 		"title",
 		"where_from",
 		"year",
 		"link",
-		"recommendation",
+		"description",
 	],
 	Books: [
 		"suggested_by",
@@ -19,17 +19,17 @@ const CATEGORY_FIELDS = {
 		"where_from",
 		"year",
 		"link",
-		"recommendation",
+		"description",
 	],
-	Podcasts: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
-	Songs: ["suggested_by", "title", "where_from", "year", "link", "recommendation"],
+	Podcasts: ["suggested_by", "title", "where_from", "year", "link", "description"],
+	Songs: ["suggested_by", "title", "where_from", "year", "link", "description"],
 	Artists: [
 		"suggested_by",
 		"artist_name",
 		"where_from",
 		"year",
 		"link",
-		"recommendation",
+		"description",
 	],
 };
 
@@ -41,7 +41,7 @@ const FIELD_LABELS = {
 	where_from: "Where",
 	year: "Year",
 	link: "Link",
-	recommendation: "Description",
+	description: "Description",
 };
 
 function Dashboard({ suggestions = [], onDelete }) {
@@ -107,8 +107,8 @@ function Dashboard({ suggestions = [], onDelete }) {
 													<td
 														key={field}
 														className={
-															field === "recommendation"
-																? "recommendation-cell"
+															field === "description"
+																? "description-cell"
 																: ""
 														}
 													>
