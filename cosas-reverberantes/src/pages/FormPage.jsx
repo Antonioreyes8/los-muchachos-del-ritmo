@@ -39,6 +39,7 @@ const FORM_FIELDS = {
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
 	Songs: [
+		{ label: "Artist", key: "artist_name", type: "text", required: true },
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
@@ -47,7 +48,7 @@ const FORM_FIELDS = {
 	],
 	Artists: [
 		{ label: "Name", key: "artist_name", type: "text", required: true },
-		{ label: "Where is it from?", key: "where_from", type: "number", required: true },
+		{ label: "Where is it from?", key: "where_from", type: "text", required: true }, // 👈 FIXED
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
@@ -61,6 +62,7 @@ function FormPage({ category, name, onSubmit, onBack }) {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData((prev) => ({ ...prev, [name]: value }));
+
 		if (errors[name]) {
 			setErrors((prev) => ({ ...prev, [name]: "" }));
 		}
@@ -68,11 +70,13 @@ function FormPage({ category, name, onSubmit, onBack }) {
 
 	const validateForm = () => {
 		const newErrors = {};
+
 		fields.forEach((field) => {
 			if (field.required && !formData[field.key]) {
 				newErrors[field.key] = `${field.label} is required`;
 			}
 		});
+
 		setErrors(newErrors);
 		return Object.keys(newErrors).length === 0;
 	};
