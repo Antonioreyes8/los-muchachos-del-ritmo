@@ -16,7 +16,7 @@ const FIELD_LABELS = {
 	category: "Category",
 	suggested_by: "Suggested By",
 	title: "Title",
-	creator: "Author / Artist",
+	creator: "Author / Artist / Director",
 	where_from: "Where",
 	year: "Year",
 	link: "Link",
@@ -41,7 +41,7 @@ function Dashboard({ suggestions = [], onDelete }) {
 
 	const getFieldValue = (suggestion, field) => {
 		if (field === "creator") {
-			return suggestion.author || suggestion.artist_name || "-";
+			return suggestion.author || suggestion.artist_name || suggestion.director || suggestion.creator || "-";
 		}
 		return suggestion[field] || "-";
 	};

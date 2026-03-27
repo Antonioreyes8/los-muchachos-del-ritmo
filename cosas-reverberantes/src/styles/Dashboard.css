@@ -82,17 +82,18 @@ td {
 }
 
 .delete-btn {
-	background: none;
+	background: white;
 	border: none;
-	color: #cc0000;
+	border-radius: 8px;
+	color: black;
 	font-size: 18px;
 	cursor: pointer;
-	padding: 4px;
+	padding: 6px 10px;
+	transition: all 0.2s ease;
 }
 
 .delete-btn:hover {
-	color: #ff0000;
-	transform: scale(1.2);
+	transform: scale(1.15);
 }
 
 @media (max-width: 768px) {

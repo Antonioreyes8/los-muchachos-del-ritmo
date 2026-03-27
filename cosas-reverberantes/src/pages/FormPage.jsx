@@ -4,6 +4,7 @@ import "../styles/FormPage.css";
 const FORM_FIELDS = {
 	Movies: [
 		{ label: "Title", key: "title", type: "text", required: true },
+		{ label: "Director", key: "director", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },
@@ -24,8 +25,8 @@ const FORM_FIELDS = {
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
 	Books: [
-		{ label: "Author", key: "author", type: "text", required: true },
 		{ label: "Title", key: "title", type: "text", required: true },
+		{ label: "Author", key: "author", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },
@@ -39,8 +40,8 @@ const FORM_FIELDS = {
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
 	Songs: [
-		{ label: "Artist", key: "artist_name", type: "text", required: true },
 		{ label: "Title", key: "title", type: "text", required: true },
+		{ label: "Artist", key: "artist_name", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },
@@ -48,7 +49,14 @@ const FORM_FIELDS = {
 	],
 	Artists: [
 		{ label: "Name", key: "artist_name", type: "text", required: true },
-		{ label: "Where is it from?", key: "where_from", type: "text", required: true }, // 👈 FIXED
+		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
+		{ label: "Link", key: "link", type: "url", required: false },
+		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
+	],
+	Video: [
+		{ label: "Title", key: "title", type: "text", required: true },
+		{ label: "Author", key: "author", type: "text", required: true },
+		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
