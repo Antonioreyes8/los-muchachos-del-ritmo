@@ -10,7 +10,7 @@ const FORM_FIELDS = {
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Serie: [
+	Show: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },

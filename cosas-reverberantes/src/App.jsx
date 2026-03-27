@@ -11,7 +11,7 @@ const FAMILY_MEMBERS = ["Tony", "Wonk", "Uri", "Tesco", "Matt"];
 
 const CATEGORIES = [
 	"Movie",
-	"Serie",
+	"Show",
 	"Article",
 	"Book",
 	"Podcast",
