@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/FormPage.css";
 
 const FORM_FIELDS = {
-	Movies: [
+	Movie: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Director", key: "director", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
@@ -10,21 +10,21 @@ const FORM_FIELDS = {
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Series: [
+	Serie: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Articles: [
+	Article: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Books: [
+	Book: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Author", key: "author", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
@@ -32,14 +32,14 @@ const FORM_FIELDS = {
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Podcasts: [
+	Podcast: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "What year was it from?", key: "year", type: "number", required: true },
 		{ label: "Link", key: "link", type: "url", required: true },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Songs: [
+	Song: [
 		{ label: "Title", key: "title", type: "text", required: true },
 		{ label: "Artist", key: "artist_name", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
@@ -47,7 +47,7 @@ const FORM_FIELDS = {
 		{ label: "Link", key: "link", type: "url", required: false },
 		{ label: "Why do you recommend it?", key: "description", type: "textarea", required: true },
 	],
-	Artists: [
+	Artist: [
 		{ label: "Name", key: "artist_name", type: "text", required: true },
 		{ label: "Where is it from?", key: "where_from", type: "text", required: true },
 		{ label: "Link", key: "link", type: "url", required: false },

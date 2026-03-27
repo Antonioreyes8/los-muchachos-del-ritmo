@@ -10,13 +10,13 @@ import { getSuggestions, createSuggestion } from "./services/suggestions";
 const FAMILY_MEMBERS = ["Tony", "Wonk", "Uri", "Tesco", "Matt"];
 
 const CATEGORIES = [
-	"Movies",
-	"Series",
-	"Articles",
-	"Books",
-	"Podcasts",
-	"Songs",
-	"Artists",
+	"Movie",
+	"Serie",
+	"Article",
+	"Book",
+	"Podcast",
+	"Song",
+	"Artist",
 	"Video",
 ];
 
