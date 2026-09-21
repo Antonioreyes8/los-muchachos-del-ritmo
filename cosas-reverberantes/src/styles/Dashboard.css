@@ -32,6 +32,13 @@
 	text-transform: uppercase;
 }
 
+.table-scroll-hint {
+	display: none;
+	margin: 0 0 8px;
+	color: #999;
+	font-size: 0.75rem;
+}
+
 .table-controls select {
 	min-width: 170px;
 	padding: 10px 12px;
@@ -40,6 +47,7 @@
 	background: #1a1a1a;
 	color: #ddd;
 	font: inherit;
+	color-scheme: dark;
 }
 
 .tables-container {
@@ -171,10 +179,10 @@ td {
 }
 
 .suggestion-modal h2 {
-    margin: 0 0 14px;
-    color: #fff;
-    font-size: 2rem;
-    letter-spacing: 0.04em;
+	margin: 0 0 14px;
+	color: #fff;
+	font-size: 2rem;
+	letter-spacing: 0.04em;
 }
 
 .modal-meta {
@@ -196,7 +204,32 @@ td {
 	color: #b32c2c;
 }
 
+th:first-child,
+td:first-child {
+	width: 58px;
+	min-width: 58px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: center;
+}
+
 @media (max-width: 768px) {
+	.table-scroll-hint {
+		display: block;
+	}
+
+	th:first-child,
+	td:first-child {
+		width: 44px;
+		min-width: 44px;
+		padding: 8px 3px;
+	}
+
+	.delete-btn {
+		font-size: 20px;
+		padding: 2px 5px;
+	}
+
 	.dashboard h1 {
 		font-size: 8rem;
 		letter-spacing: 0.15rem;

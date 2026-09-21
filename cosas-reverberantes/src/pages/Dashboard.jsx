@@ -157,6 +157,10 @@ function Dashboard({ suggestions = [], onDelete }) {
 				</label>
 			</div>
 
+			<p className="table-scroll-hint">
+				Swipe horizontally to see more columns
+			</p>
+
 			<div className="table-wrapper">
 				<table>
 					<thead>
